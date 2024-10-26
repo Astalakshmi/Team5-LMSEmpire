@@ -14,15 +14,13 @@ import utilities.ConfigFileReader;
     glue = {"stepdefinitions","hooks"},
     monochrome = true,
 
-    tags= "@ClassPageValidation",
+    //tags= "@Login",
 
     plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
     		"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
     		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-    		},
-    dryRun = true 
-		)
-	
+    		})
+
  
 	
 public class TestRunner extends AbstractTestNGCucumberTests{
@@ -40,5 +38,3 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 		return super.scenarios();
     }	
 }
-
-
