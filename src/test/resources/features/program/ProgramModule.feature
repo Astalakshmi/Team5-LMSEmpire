@@ -1,10 +1,9 @@
 
 Feature: Program Page
   Background:
-	Given user is on the login page
-	When user enters username as "Sdet@gmail.com" and password as "LmsHackathon@2024" and cliks Login button
-	And user lands on Dashboard page
-	Then Admin clicks "Program" on the navigation bar
+	When Admin enter valid credentials and clicks login button 
+    Then Admin should land on dashboard page
+    When Admin clicks "Program" on the navigation bar
 
 
 @tag45
