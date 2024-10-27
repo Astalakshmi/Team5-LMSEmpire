@@ -48,7 +48,7 @@ public class ConfigFileReader {
 
 
 	public String getUser() {                 //added by shruti
-		String username = properties.getProperty("username");
+		String username = properties.getProperty("username").trim();
 		if (username != null)
 			return username;
 		else
@@ -57,7 +57,7 @@ public class ConfigFileReader {
 
 	
 	public String getPassword() {            //added by shruti
-		String password = properties.getProperty("password");
+		String password = properties.getProperty("password").trim();
 		if (password != null)
 			return password;
 		else
