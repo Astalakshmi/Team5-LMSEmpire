@@ -2,6 +2,8 @@ package stepdefinitions;
 
 import java.time.Duration;
 
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import org.openqa.selenium.WebDriver;
 
 
@@ -11,6 +13,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.BatchPage;
+import utilities.LoggerLoad;
 
 public class BatchPage_Step {
 	
@@ -31,57 +34,77 @@ public class BatchPage_Step {
 	}
 
 	@Then("Admin should see the {string} Title")
-	public void admin_should_see_the_title(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void admin_should_see_the_title(String Header) {
+		batchpage.HeaderValidation(Header);
+		System.out.println("Admin is able to see LMS-Learning Management System in the header");
 	}
 
 	@Then("Admin should see the {string} Heading")
-	public void admin_should_see_the_heading(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void admin_should_see_the_heading(String headerBatch) {
+		batchpage.HeaderValidationBatch(headerBatch);
+		System.out.println("Admin is able to see Manage Batch Page in the header");
 	}
 
 	@Then("Admin should see the disabled {string} under the header")
 	public void admin_should_see_the_disabled_under_the_header(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		Assert.assertFalse(batchpage.DeletetopIconValidation());
+		LoggerLoad.info("Admin is able to see the Delete icon button that is disabled on Manage Batch Page");
 	}
 
 	@Then("Admin should see the enabled pagination controls under the data table")
 	public void admin_should_see_the_enabled_pagination_controls_under_the_data_table() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+		// Check if pagination is visible and enabled
+        batchpage.PaginationValidation();
+        
+        
+        
+        // Log the outcome
+        LoggerLoad.info("Admin should see the enabled pagination controls under the data table");
+    	}
 
 	@Then("Admin should see the edit icon in each row")
 	public void admin_should_see_the_edit_icon_in_each_row() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		 boolean editIconPresent = batchpage.isEditIconPresentInEachRow();
+	        Assert.assertTrue(editIconPresent, "Edit icon is not present in each row as expected.");
+
+	        LoggerLoad.info("Admin should see the edit icon in each row");
+	    
 	}
 
 	@Then("Admin should see the delete icon in each row")
 	public void admin_should_see_the_delete_icon_in_each_row() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		boolean deleteIconPresent = batchpage.isDeleteIconPresentInEachRow();
+        Assert.assertTrue(deleteIconPresent, "Delete icon is not present in each row as expected.");
+
+        LoggerLoad.info("Admin should see the delete icon in each row");
+    
 	}
 
 	@Then("Admin should the checkbox in each row")
 	public void admin_should_the_checkbox_in_each_row() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		boolean checkboxPresent = batchpage.isCheckboxPresentInEachRow();
+        Assert.assertTrue(checkboxPresent, "Checkbox is not present in each row as expected.");
+
+        LoggerLoad.info("Admin should see the checkbox in each row");
+    
 	}
 
 	@Then("Admin should see the datatable headers Batch name, Batch Description,Batch Status, No Of classes, Program Name, Edit\\/Delete")
 	public void admin_should_see_the_datatable_headers_batch_name_batch_description_batch_status_no_of_classes_program_name_edit_delete() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		boolean headersVisible = batchpage.areHeadersVisible();
+        Assert.assertTrue(headersVisible, "One or more of the expected headers are not visible in the data table.");
+
+        LoggerLoad.info("Admin should see the datatable headers Batch name, Batch Description, Batch Status, No Of classes, Program Name, Edit/Delete");
 	}
 
 	@Then("Admin should see the checkbox  in the datatable header row")
 	public void admin_should_see_the_checkbox_in_the_datatable_header_row() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		// Check if the checkbox element is displayed using the BatchPage object
+	    boolean isCheckboxVisible = batchpage.isHeaderCheckboxVisible();
+	    
+	    // Assert to validate the checkbox is visible
+	    Assert.assertTrue(isCheckboxVisible, "Checkbox in the datatable header row is not visible.");
+
 	}
 
 	@Then("Admin should see the sort icon next to all Datatable headers")
