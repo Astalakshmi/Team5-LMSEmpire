@@ -71,7 +71,7 @@ Background: Batch Login
     @tag15
   Scenario: Validate Edit icon feature in any row
     When Admin clicks the edit icon    
-    Then Admin should see the Batch details pop up window
+    Then Admin should see the Batch details pop up window2
     
     @tag16
   Scenario: Validate program name  value is disabled to edit

@@ -109,34 +109,41 @@ public class BatchPage_Step {
 
 	@Then("Admin should see the sort icon next to all Datatable headers")
 	public void admin_should_see_the_sort_icon_next_to_all_datatable_headers() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		boolean areAllSortIconsVisible = batchpage.areAllSortIconsVisible();
+	    
+	    // Assert to validate that all sort icons are visible
+	    Assert.assertTrue(areAllSortIconsVisible,"Not all datatable headers have the sort icon next to them.");
+	
 	}
 
 	@Then("Admin should see sub menu in menu bar as {string}")
 	public void admin_should_see_sub_menu_in_menu_bar_as(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		//boolean isNewBatchButtonVisible = batchpage.sNewBatchButtonVisible();
+		batchpage.isSubmenuVisible(string);
+		LoggerLoad.info("Admin should see sub menu in menu bar as Add New Batch");
+	    
 	}
 
 	@When("Admin clicks on {string} under the {string} menu bar")
 	public void admin_clicks_on_under_the_menu_bar(String string, String string2) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		batchpage.clickAddNewBatchButton();
 	}
 
 	@Then("Admin should see the Batch Details pop up window1")
 	public void admin_should_see_the_batch_details_pop_up_window1() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		batchpage.batchdetailPOP();
+		System.out.println("Admin should see the Batch Details pop up window1");
 	}
 
 	@When("Admin clicks the edit icon")
 	public void admin_clicks_the_edit_icon() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    batchpage.editButton();
 	}
-
+	@Then("Admin should see the Batch details pop up window2")
+	public void admin_should_see_the_batch_details_pop_up_window2() {
+		batchpage.batchdetailPOP();
+		System.out.println("Admin should see the Batch Details pop up window1");
+	}
 
 
 	@Then("Admin should see Program name value field is disabled for editing")

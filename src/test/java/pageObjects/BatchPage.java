@@ -9,6 +9,7 @@ import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -55,7 +56,12 @@ public class BatchPage {
 	
 	
 	private By headerCheckBox = By.xpath("//div[@class='p-checkbox-box']");
-	
+    private By sortIcon = By.xpath("//th[normalize-space()='Batch Name']//i[@class='p-sortable-column-icon pi pi-fw pi-sort-alt']");
+
+    private By newBatchButton = By.xpath("//button[normalize-space()='Add New Batch']");
+    private By batchDetailsPop = By.xpath("//span[@id='pr_id_2-label']");
+    
+    private By rowEditBtn = By.xpath("(//span[@aria-hidden='true'])[3]");
 	
 	public void BatchClickMd() throws InterruptedException {
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -167,8 +173,54 @@ public class BatchPage {
         return driver.findElement(headerCheckBox).isDisplayed();
     
     
+        }
     
+    
+    public boolean areAllSortIconsVisible() {
+        List<WebElement> sortIcons = driver.findElements(sortIcon);
+        
+        // Check each icon's visibility
+        for (WebElement icon : sortIcons) {
+            if (!icon.isDisplayed()) {
+                return false; // Return false if any icon is not visible
+            }
+        }
+        return true; // Return true if all icons are visible
     }
+    
+    public boolean isSubmenuVisible(String submenuText) {
+    	
+    	try {
+            return driver.findElement(newBatchButton).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false; // Return false if the button is not found
+        }
+    }
+    
+    public void clickAddNewBatchButton() {
+        driver.findElement(newBatchButton).click();
+    }
+    
+    public void batchdetailPOP() {
+
+    	driver.findElement(batchDetailsPop);
+	
+}
+    
+    public void editButton() {
+        WebElement editButton = driver.findElement(rowEditBtn);
+        try {
+            editButton.click();
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", editButton);
+        }
+    }
+    
+    
+    
+    
+    
+    
     }
 	
 
