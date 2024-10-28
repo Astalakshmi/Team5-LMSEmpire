@@ -116,8 +116,8 @@ public class BatchPage_Step {
 	
 	}
 
-	@Then("Admin should see sub menu in menu bar as {string}")
-	public void admin_should_see_sub_menu_in_menu_bar_as(String string) {
+	@Then("Admin1 should see sub menu in menu bar as {string}")
+	public void admin1_should_see_sub_menu_in_menu_bar_as(String string) {
 		
 		
 		batchpage.isSubmenuVisible(string);
@@ -125,8 +125,8 @@ public class BatchPage_Step {
 	    
 	}
 
-	@When("Admin clicks on {string} under the {string} menu bar")
-	public void admin_clicks_on_under_the_menu_bar(String string, String string2) {
+	@When("Admin clicks on {string} under the {string} menu bar1")
+	public void admin_clicks_on_under_the_menu_bar1(String string, String string2) {
 		batchpage.clickAddNewBatchButton();
 	}
 

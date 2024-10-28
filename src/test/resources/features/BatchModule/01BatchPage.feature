@@ -59,12 +59,12 @@ Background: Batch Login
     #Add New Batch
     
   Scenario: Verify sub menu displayed in batch menu bar
-    Then Admin should see sub menu in menu bar as "Add New Batch"
+    Then Admin1 should see sub menu in menu bar as "Add New Batch"
     
     
     @tag14
   Scenario: Validate Admin able to click on the Add new Batch Option
-    When Admin clicks on "Add New batch" under the "batch" menu bar  
+    When Admin clicks on "Add New batch" under the "batch" menu bar1  
     Then Admin should see the Batch Details pop up window
     
     #Edit icon Validation
