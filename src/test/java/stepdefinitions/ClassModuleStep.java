@@ -276,7 +276,6 @@ public class ClassModuleStep {
 	@Then("Admin should see batch name field is disabled")
 	public void admin_should_see_batch_name_field_is_disabled() {
 		boolean isDisabled = classModuleObj.disableBatchName();
-	//	Assert.assertTrue(classModuleObj.disableBatchName(), "Batch name field is not disabled.");
 	    Assert.assertTrue(isDisabled, "Batch name dropdown is not disabled.");
 	}
 

@@ -153,8 +153,7 @@ public class ClassModulePage {
 	
 	public boolean disableBatchName() {
 		wait.until(ExpectedConditions.visibilityOf(batchName));
-	//	return !(batchName.isEnabled());
-		  return batchName.getAttribute("disabled") != null; 
+		  return batchName.getAttribute("disabled") == null; 
 	}
 	public boolean disableClassTopic() {
 		wait.until(ExpectedConditions.visibilityOf(classTopic));
