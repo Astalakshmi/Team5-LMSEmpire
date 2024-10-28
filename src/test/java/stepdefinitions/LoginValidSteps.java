@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import org.testng.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,9 +20,9 @@ public class LoginValidSteps {
 
 		    @Then("Admin should land on dashboard page")
 		    public void admin_should_land_on_dashboard_page() {
-		       
-		       	System.out.println("I am in dashboard page");
-
+		    	
+		    	String Heading= loginvalidpage.GetText();
+		       	System.out.println(Heading);
 		    	
 		    }
 
