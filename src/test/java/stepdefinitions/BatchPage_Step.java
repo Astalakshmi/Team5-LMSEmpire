@@ -53,12 +53,12 @@ public class BatchPage_Step {
 
 	@Then("Admin should see the enabled pagination controls under the data table")
 	public void admin_should_see_the_enabled_pagination_controls_under_the_data_table() {
-		// Check if pagination is visible and enabled
+		
         batchpage.PaginationValidation();
         
         
         
-        // Log the outcome
+        
         LoggerLoad.info("Admin should see the enabled pagination controls under the data table");
     	}
 
@@ -111,14 +111,15 @@ public class BatchPage_Step {
 	public void admin_should_see_the_sort_icon_next_to_all_datatable_headers() {
 		boolean areAllSortIconsVisible = batchpage.areAllSortIconsVisible();
 	    
-	    // Assert to validate that all sort icons are visible
+	    
 	    Assert.assertTrue(areAllSortIconsVisible,"Not all datatable headers have the sort icon next to them.");
 	
 	}
 
 	@Then("Admin should see sub menu in menu bar as {string}")
 	public void admin_should_see_sub_menu_in_menu_bar_as(String string) {
-		//boolean isNewBatchButtonVisible = batchpage.sNewBatchButtonVisible();
+		
+		
 		batchpage.isSubmenuVisible(string);
 		LoggerLoad.info("Admin should see sub menu in menu bar as Add New Batch");
 	    
@@ -142,43 +143,51 @@ public class BatchPage_Step {
 	@Then("Admin should see the Batch details pop up window2")
 	public void admin_should_see_the_batch_details_pop_up_window2() {
 		batchpage.batchdetailPOP();
-		System.out.println("Admin should see the Batch Details pop up window1");
+		System.out.println("Admin should see the Batch Details pop up window2");
 	}
-
-
+	
+	@When("Admin clicks the edit icon1")
+	public void admin_clicks_the_edit_icon1() {
+	    batchpage.editButton();
+	}
+	
 	@Then("Admin should see Program name value field is disabled for editing")
 	public void admin_should_see_program_name_value_field_is_disabled_for_editing() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		boolean isDisabled = batchpage.isProgramNameFieldDisabled();
+	    Assert.assertTrue(isDisabled, "The Program name field is not disabled for editing.");
+	}
+	
+	@When("Admin clicks the edit icon2")
+	public void admin_clicks_the_edit_icon2() {
+	    batchpage.editButton();
 	}
 
 	@Then("Admin should see batch name value field is disabled for editing")
 	public void admin_should_see_batch_name_value_field_is_disabled_for_editing() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		boolean isDisabled = batchpage.isBatchNameFieldDisabled();
+	    Assert.assertTrue(isDisabled,"The Batch name field is not disabled for editing.");
 	}
 
 	@Given("Admin is on the Batch Details Page")
 	public void admin_is_on_the_batch_details_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		batchpage.editButton();
 	}
 
 	@When("Admin Updates any fields with invalid data and click save button")
 	public void admin_updates_any_fields_with_invalid_data_and_click_save_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		batchpage.enterInvalidDataInDescription("Invalid Data!@#");  // Replace with the desired invalid data
+	    batchpage.clickSaveButton();
 	}
 
 	@Then("Admin should get a error message under the respective field")
 	public void admin_should_get_a_error_message_under_the_respective_field() {
-	    // Write code here that turns the phrase above into concrete actions
+	    
 	    throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin enters the valid data to all the mandatory fields and click save button")
 	public void admin_enters_the_valid_data_to_all_the_mandatory_fields_and_click_save_button() {
-	    // Write code here that turns the phrase above into concrete actions
+	   
 	    throw new io.cucumber.java.PendingException();
 	}
 

@@ -75,12 +75,12 @@ Background: Batch Login
     
     @tag16
   Scenario: Validate program name  value is disabled to edit
-    When Admin clicks the edit icon 
+    When Admin clicks the edit icon1 
     Then Admin should see Program name value field is disabled for editing
     
     @tag17
   Scenario: Validate batch name  value is disabled to edit	Admin is on the Batch page
-    When Admin clicks the edit icon 
+    When Admin clicks the edit icon2 
     Then Admin should see batch name value field is disabled for editing
     
     @tag18

@@ -62,6 +62,13 @@ public class BatchPage {
     private By batchDetailsPop = By.xpath("//span[@id='pr_id_2-label']");
     
     private By rowEditBtn = By.xpath("(//span[@aria-hidden='true'])[3]");
+    
+    private By programNameDropdown = By.xpath("//p-dropdown[@id='programName']");
+    private By batchNameField = By.xpath("(//input[@id='batchName'])[2]");
+    
+    private By descriptionField = By.xpath("//input[@id='batchDescription']");
+    private By saveButton = By.xpath("//button[@class='p-button-rounded p-button-success p-button p-component ng-star-inserted']");
+    
 	
 	public void BatchClickMd() throws InterruptedException {
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -94,12 +101,12 @@ public class BatchPage {
 		return isDeleteIconDisabled; 
 }
 		
-	// Method to validate pagination controls
+	
     public boolean PaginationValidation() {
-        return isElementDisplayed(pagination); // Directly check if pagination is displayed
+        return isElementDisplayed(pagination); 
     }
 
-    // Helper method to check if an element is displayed
+    
     private boolean isElementDisplayed(By locator) {
         try {
             WebElement element = new WebDriverWait(driver, Duration.ofSeconds(30))
@@ -107,49 +114,51 @@ public class BatchPage {
             return element.isDisplayed();
         } catch (Exception e) {
             e.printStackTrace();
-            return false; // Return false if element is not found or an exception occurs
+            return false; 
         }
     }
     
     
- // Method to validate if edit icon is present in each row
+ 
     public boolean isEditIconPresentInEachRow() {
-        List<WebElement> editIcons = driver.findElements(BatcheditIcon); // Finds all edit icons
-        // Check that edit icon is present in each row (assuming one icon per row)
+        List<WebElement> editIcons = driver.findElements(BatcheditIcon); 
+        
+        
         for (WebElement icon : editIcons) {
             if (!icon.isDisplayed()) {
-                return false; // Return false if any icon is not visible
+                return false; 
             }
         }
-        return !editIcons.isEmpty(); // Return true if all icons are visible and list is not empty
+        return !editIcons.isEmpty(); 
     }
     
- // Method to validate if delete icon is present in each row
+ 
     public boolean isDeleteIconPresentInEachRow() {
-        List<WebElement> deleteIcons = driver.findElements(sidedeleteIcon); // Find all delete icons
-        // Check that delete icon is present in each row (assuming one icon per row)
+        List<WebElement> deleteIcons = driver.findElements(sidedeleteIcon); 
+       
+        
         for (WebElement icon : deleteIcons) {
             if (!icon.isDisplayed()) {
-                return false; // Return false if any icon is not visible
+                return false; 
             }
         }
-        return !deleteIcons.isEmpty(); // Return true if all icons are visible and list is not empty
+        return !deleteIcons.isEmpty(); 
     }
     
     
     public boolean isCheckboxPresentInEachRow() {
-        List<WebElement> checkboxes = driver.findElements(Batchcheckbox); // Find all checkboxes
-        // Check that checkbox is present in each row (assuming one checkbox per row)
+        List<WebElement> checkboxes = driver.findElements(Batchcheckbox); 
+        
         for (WebElement checkbox : checkboxes) {
             if (!checkbox.isDisplayed()) {
-                return false; // Return false if any checkbox is not visible
+                return false; 
             }
         }
-        return !checkboxes.isEmpty(); // Return true if all checkboxes are visible and list is not empty
+        return !checkboxes.isEmpty(); 
     }
     
     
- // Method to validate if all headers are present
+ 
     public boolean areHeadersVisible() {
         return isElementVisible(batchName) &&
                isElementVisible(batchDescription) &&
@@ -159,13 +168,13 @@ public class BatchPage {
                isElementVisible(editDelete);
     }
 
-    // Helper method to check visibility of an element
+    
     private boolean isElementVisible(By locator) {
         try {
             WebElement element = driver.findElement(locator);
             return element.isDisplayed();
         } catch (Exception e) {
-            return false; // Return false if the element is not found or not visible
+            return false; 
         }
     }
     
@@ -179,13 +188,13 @@ public class BatchPage {
     public boolean areAllSortIconsVisible() {
         List<WebElement> sortIcons = driver.findElements(sortIcon);
         
-        // Check each icon's visibility
+        
         for (WebElement icon : sortIcons) {
             if (!icon.isDisplayed()) {
-                return false; // Return false if any icon is not visible
+                return false; 
             }
         }
-        return true; // Return true if all icons are visible
+        return true; 
     }
     
     public boolean isSubmenuVisible(String submenuText) {
@@ -193,7 +202,7 @@ public class BatchPage {
     	try {
             return driver.findElement(newBatchButton).isDisplayed();
         } catch (NoSuchElementException e) {
-            return false; // Return false if the button is not found
+            return false; 
         }
     }
     
@@ -217,11 +226,34 @@ public class BatchPage {
     }
     
     
-    
-    
-    
-    
+   public boolean isProgramNameFieldDisabled() {
+        WebElement dropdown = driver.findElement(programNameDropdown);
+       return !dropdown.isEnabled(); 
     }
+    
+   public boolean isBatchNameFieldDisabled() {
+	    WebElement batchNameInput = driver.findElement(batchNameField);
+	    return !batchNameInput.isEnabled(); 
+	}
+   
+   public void enterInvalidDataInDescription(String invalidData) {
+	    WebElement descriptionInput = driver.findElement(descriptionField);
+	    descriptionInput.clear();  // Clear any existing text
+	    descriptionInput.sendKeys(invalidData); // Enter invalid data
+	}
+
+	public void clickSaveButton() {
+	   
+	    
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as needed
+	    WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(saveButton));
+	    saveBtn.click();
+	}
+   
+   
+    
+}
+    
 	
 
 
