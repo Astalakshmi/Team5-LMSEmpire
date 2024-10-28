@@ -154,6 +154,14 @@ public class LoginPage {
     public void onlyEnterUserName() { 
     	driver.findElement(By.id("username")).sendKeys(validUserName);
     	driver.findElement(By.id("login")).click();	
-	}	
+	}
+    
+    public void clickLogout() {
+    	driver.findElement(By.id("logout")).click();
+    }
+    
+    public void clickBackButton() {
+    	driver.navigate().back();
+    }
 	
 }
