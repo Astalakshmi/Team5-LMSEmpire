@@ -104,19 +104,8 @@ Feature: Login  Page Verification
 #	Scenario: Verify input descriptive test in password field
 #		Given Admin launch the browser
 #		When Admin gives the correct LMS portal URL
-#		Then Admin should see password in gray color	
-	
-	@SkipHooks
-	Scenario: Validate login with valid credentials
-		Given Admin is in login Page
-		When Admin enter valid credentials  and clicks login button 
-		Then Admin should land on dashboard page  
-	
-	@SkipHooks
-	Scenario: Validate login with invalid credentials
-		Given Admin is in login Page
-		When Admin enter invalid credentials  and clicks login button 
-		Then Error message please check Adminname/password
+#		Then Admin should see password in gray color
+
 #	
 #	@SkipHooks
 #	Scenario: Validate login credentials with null Adminname
@@ -129,7 +118,20 @@ Feature: Login  Page Verification
 #		Given Admin is in login Page
 #		When Admin enter value only in Adminname and clicks login button 
 #		Then Error message please check Adminname/password
-#	
+#		
+	
+	@SkipHooks
+	Scenario: Validate login with valid credentials
+		Given Admin is in login Page
+		When Admin enter valid credentials  and clicks login button 
+		Then Admin should land on dashboard page  
+	
+	@SkipHooks
+	Scenario: Validate login with invalid credentials
+		Given Admin is in login Page
+		When Admin enter invalid credentials  and clicks login button 
+		Then Error message please check Adminname/password
+
 	@SkipHooks
 	Scenario: verify login button action through keyboard
 		Given Admin is in login Page
