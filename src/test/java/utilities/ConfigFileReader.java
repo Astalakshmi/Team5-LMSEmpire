@@ -20,7 +20,7 @@ public class ConfigFileReader {
 				properties.load(reader);
 				reader.close();
 				setBrowserType(properties.getProperty("browser")) ;   // added by Shruti
-				
+
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -39,77 +39,98 @@ public class ConfigFileReader {
 
 	public static String getBrowserType() {
 
-		if (browserType != null)
+		if (browserType != null) {
 			return browserType;
-		else
+		} else {
 			throw new RuntimeException("browser not specified in the testng.xml");
+		}
 
 	}
 
 
 	public String getUser() {                 //added by shruti
 		String username = properties.getProperty("username").trim();
+<<<<<<< HEAD
 		if (username != null)
+=======
+
+		if (username != null) {
+
+>>>>>>> master
 			return username;
-		else
+		} else {
 			throw new RuntimeException("username  not specified in the Configuration.properties file.");
+		}
 	}
 
-	
+
 	public String getPassword() {            //added by shruti
 		String password = properties.getProperty("password").trim();
+<<<<<<< HEAD
 		if (password != null)
+=======
+
+		if (password != null) {
+
+>>>>>>> master
 			return password;
-		else
+		} else {
 			throw new RuntimeException("password not specified in the Configuration.properties file.");
+		}
 	}
-	
+
 	public String getBrowser() {
 		String browser = properties.getProperty("browser");
-		if (browser != null)
+		if (browser != null) {
 			return browser;
-		else
+		} else {
 			throw new RuntimeException("browser not specified in the Configuration.properties file.");
+		}
 	}
 
 	public String getPageTitle(String pageName) {
 		String title = properties.getProperty(pageName);
-		if (title != null)
+		if (title != null) {
 			return title;
-		else
+		} else {
 			throw new RuntimeException(pageName + " url not specified in the Configuration.properties file.");
+		}
 	}
 
 	public String getIndexUrl() {
 		String indexUrl = properties.getProperty("indexUrl");
-		if (indexUrl != null)
+		if (indexUrl != null) {
 			return indexUrl;
-		else
+		} else {
 			throw new RuntimeException(" Index url not specified in the Configuration.properties file.");
+		}
 	}
 
 	public String getHomeUrl() {
 		String homepageUrl = properties.getProperty("homepageUrl");
-		if (homepageUrl != null)
+		if (homepageUrl != null) {
 			return homepageUrl;
-		else
+		} else {
 			throw new RuntimeException(" homepage url not specified in the Configuration.properties file.");
+		}
 	}
-	
+
 	public String getAlert(String alertNames) {
 		String alertName = properties.getProperty(alertNames);
-		if (alertName != null)
+		if (alertName != null) {
 			return alertName;
-		else
+		} else {
 			throw new RuntimeException(alertName + " alert does not match in the Configuration.properties file.");
+		}
 	}
 
 	public String getFunctionalityMessage(String functionalityName) {
 		String funcName = properties.getProperty(functionalityName);
-		if (funcName != null)
+		if (funcName != null) {
 			return funcName;
-		else
+		} else {
 			throw new RuntimeException(funcName + " does not match in the Configuration.properties file.");
+		}
 	}
 							
 	public String getDashboard() {          //added by asta
