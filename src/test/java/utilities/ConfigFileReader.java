@@ -52,8 +52,8 @@ public class ConfigFileReader {
 		String username = properties.getProperty("username").trim();
 
 
-		if (username != null) {
-
+		if (username != null)
+		{
 
 			return username;
 		} else {
@@ -65,9 +65,8 @@ public class ConfigFileReader {
 	public String getPassword() {            //added by shruti
 		String password = properties.getProperty("password").trim();
 
-
-		if (password != null) {
-
+		if (password != null)
+		{
 
 			return password;
 		} else {
@@ -128,5 +127,35 @@ public class ConfigFileReader {
 			throw new RuntimeException(funcName + " does not match in the Configuration.properties file.");
 		}
 	}
-
+							
+	public String getDashboard() {          //added by asta
+		String dashBoardUrl = properties.getProperty("dashBoardUrl");
+		if (dashBoardUrl != null)
+			return dashBoardUrl;
+		else
+			throw new RuntimeException(" dashBoard Url not specified in the Configuration.properties file.");
+	}
+	
+	public String getClassModulePageUrl() {          //added by asta
+		String classModulePageUrl= properties.getProperty("classModulePageUrl");
+		if (classModulePageUrl != null)
+			return classModulePageUrl;
+		else
+			throw new RuntimeException(" classModulePage Url not specified in the Configuration.properties file.");
+	}
+																//asta
+	public String getManageHeader(String className) {
+		String classheader = properties.getProperty(className);
+		if (classheader != null)
+			return classheader;
+		else
+			throw new RuntimeException(className + " url not specified in the Configuration.properties file.");
+	}
+	public String getsearchbar(String searchbar) { //asta
+		String searchbarValue= properties.getProperty("searchbar");
+		if (searchbarValue != null)
+			return searchbarValue;
+		else
+			throw new RuntimeException("'searchbar' property not specified in the Configuration.properties file");
+	}
 }
