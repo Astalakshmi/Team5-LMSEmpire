@@ -31,7 +31,7 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 		ConfigFileReader.setBrowserType(browser);
 	}
 	@Override
-    @DataProvider(parallel = false)//true means execute parallely 
+    @DataProvider(parallel = true)//true means execute parallely 
 	
     public Object[][] scenarios() {
 				
