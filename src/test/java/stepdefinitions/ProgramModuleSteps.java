@@ -12,15 +12,6 @@ public class ProgramModuleSteps {
 	ProgramModule programModule = new ProgramModule();
 	//ConfigFileReader confReader =  new ConfigFileReader();
 
-
-/*@When("Admin clicks {string} on the navigation bar")
-public void admin_clicks_on_the_navigation_bar(String program) {
-	System.out.println("Testing..");
-	programModule.programBtn();
-
-}
-*/
-
 @When("Admin clicks {string} on the navigation bar")
 public void admin_clicks_on_the_navigation_bar(String string) {
 	System.out.println("Testing..");

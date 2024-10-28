@@ -95,8 +95,13 @@ public class ProgramModule {
 	public String addNewProgram() {
 
 		WebElement subMenuItem = wait.until(ExpectedConditions.elementToBeClickable(addNewProgram));
-		//subMenuItem.click();
 		return subMenuItem.getText();
+	}
+	public void addNewProgramClick() {
+
+		WebElement subMenuItem = wait.until(ExpectedConditions.elementToBeClickable(addNewProgram));
+		//subMenuItem.click();
+		 subMenuItem.click();
 	}
 	public boolean isDeleteAllBtnEnabled() {
 
@@ -118,6 +123,7 @@ public class ProgramModule {
 	public boolean isChkBxHeaderSelected() {
 		return chkBoxHeader.isSelected();
 	}
+	
 	public boolean isChkBoxListSelected() {
 		boolean state = false;
 		for(WebElement box: chkBoxList ) {
@@ -166,6 +172,10 @@ public class ProgramModule {
 		String[] arr = totalProgramsDetails.split(" ");
 		int totalPrograms = Integer.parseInt(arr[4]);
 		return totalPrograms;
+	}
+	
+	public List<WebElement>getEditbuttonList(){
+		return editBtnList;
 	}
 
 }

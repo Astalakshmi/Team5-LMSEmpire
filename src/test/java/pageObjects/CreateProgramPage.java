@@ -65,12 +65,14 @@ public class CreateProgramPage {
 		return mandatorySignForName.isDisplayed();
 	}
 	public void txtProgramName(String name) {
+		txtName.clear();
 		txtName.sendKeys(name);
 	}
 	public String readNameEntered() {
 		return txtName.getAttribute("value");
 	}
 	public void txtDescription(String description) {
+		txtDescription.clear();
 		txtDescription.sendKeys(description);
 	}
 	public String readDescriptionEntered() {
@@ -82,8 +84,14 @@ public class CreateProgramPage {
 	public void saveButtonClick() {
 		saveBtn.click();
 	}
+	public WebElement saveBtn() {
+		return saveBtn;
+	}
 	public void cancelButtonClick() {
 		cancelBtn.click();
+	}
+	public WebElement cancelBtn() {
+		return cancelBtn;
 	}
 	public void activeButtonClick() {
 		
