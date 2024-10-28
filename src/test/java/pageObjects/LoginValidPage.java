@@ -28,12 +28,17 @@ public class LoginValidPage {
 	
 	@FindBy(id="login")
 	WebElement submitBtn;
-	
-	
+
+	@FindBy(xpath="//span[normalize-space()='LMS - Learning Management System']")
+	WebElement LMSHeading;
 
 	private By nullEmailIdErrMsg = By.id("mat-error-0");
 	private By nullPasswordErrMsg = By.id("mat-error-1");
+
 	
+	@FindBy(xpath=("//span[text()=' LMS - Learning Management System ']"))
+	WebElement LMSHeading;
+		
 	private By textFields = By.className("cdk-text-field-autofill-monitored"); 
      
      
@@ -51,5 +56,11 @@ public class LoginValidPage {
 		System.out.println("Admin is logged into LMS Application");
 		
 	}
+
+	public String GetText() {
+
+		return LMSHeading.getText();
+	}
+
 
 }
