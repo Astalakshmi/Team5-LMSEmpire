@@ -17,7 +17,7 @@ public class HooksBase {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	
-	@Before
+	@Before("not @SkipHooks")
 	public void launchBrowser() {
 		
 		String browserType = ConfigFileReader.getBrowserType();

@@ -27,6 +27,7 @@ public class ExcelFileReader {
 			// Create a temporary copy of the file for this thread/process
 			tempFile = File.createTempFile("copy_", ".xlsx");
 			Files.copy(Paths.get(excelFilePath), tempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+			System.out.println(tempFile.toPath().toString());
 			workbook = WorkbookFactory.create(tempFile);
 			Sheet sheet = workbook.getSheet(sheetName);
 			return readSheet(sheet);
