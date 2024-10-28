@@ -50,13 +50,9 @@ public class ConfigFileReader {
 
 	public String getUser() {                 //added by shruti
 		String username = properties.getProperty("username").trim();
-<<<<<<< HEAD
+
 		if (username != null)
-=======
-
-		if (username != null) {
-
->>>>>>> master
+		{
 			return username;
 		} else {
 			throw new RuntimeException("username  not specified in the Configuration.properties file.");
@@ -66,13 +62,9 @@ public class ConfigFileReader {
 
 	public String getPassword() {            //added by shruti
 		String password = properties.getProperty("password").trim();
-<<<<<<< HEAD
+
 		if (password != null)
-=======
-
-		if (password != null) {
-
->>>>>>> master
+		{
 			return password;
 		} else {
 			throw new RuntimeException("password not specified in the Configuration.properties file.");

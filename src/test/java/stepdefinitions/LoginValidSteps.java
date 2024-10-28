@@ -1,15 +1,14 @@
 package stepdefinitions;
 
-<<<<<<< HEAD
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import driverManager.WebdriverManager;
-=======
+
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
->>>>>>> master
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.LoginValidPage;
@@ -30,16 +29,10 @@ public class LoginValidSteps {
 
 		    @Then("Admin should land on dashboard page")
 		    public void admin_should_land_on_dashboard_page() {
-<<<<<<< HEAD
+
 		      
 		    	String Heading = loginvalidpage.GetText();
 		       	System.out.println("I am in dashboard page"+Heading);
 		    
-=======
-		    	
-		    	String Heading= loginvalidpage.GetText();
-		       	System.out.println(Heading);
-		    	
->>>>>>> master
 		    }
 	}
