@@ -49,10 +49,15 @@ public class ConfigFileReader {
 
 
 	public String getUser() {                 //added by shruti
+<<<<<<< HEAD
 		String username = properties.getProperty("username").trim();
 
 		if (username != null) {
 
+=======
+		String username = properties.getProperty("username");
+		if (username != null)
+>>>>>>> branch 'vidya' of https://github.com/Astalakshmi/Team5-LMSEmpire.git
 			return username;
 		} else {
 			throw new RuntimeException("username  not specified in the Configuration.properties file.");
@@ -61,10 +66,15 @@ public class ConfigFileReader {
 
 
 	public String getPassword() {            //added by shruti
+<<<<<<< HEAD
 		String password = properties.getProperty("password").trim();
 
 		if (password != null) {
 
+=======
+		String password = properties.getProperty("password");
+		if (password != null)
+>>>>>>> branch 'vidya' of https://github.com/Astalakshmi/Team5-LMSEmpire.git
 			return password;
 		} else {
 			throw new RuntimeException("password not specified in the Configuration.properties file.");
