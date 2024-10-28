@@ -1,112 +1,162 @@
 package stepdefinitions;
 
+
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import driverManager.WebdriverManager;
 import io.cucumber.java.en.*;
+import pageObjects.ClassModulePage;
+import utilities.ConfigFileReader;
+import utilities.LoggerLoad;
 
-public class ClassModule {
+public class ClassModuleStep {
 	
+	
+	WebDriver driver = WebdriverManager.getDriver();
+	ConfigFileReader configFileReader = WebdriverManager.configReader();
+	ClassModulePage classModuleObj = new ClassModulePage();
+
 //---------------------------@ClassPageValidation-----------------------------------------------------------
-	@Given("The Admin is on the login page")
-	public void the_Admin_is_on_the_login_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@And("The Admin enters the valid username and password {string}")
-	public void the_Admin_enters_the_valid_username_and_password(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@And("The Admin Is on the Dashboard page after login")
-	public void the_Admin_is_on_the_dashboard_page_after_login() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
+	
 	@When("Admin clicks the Class Navigation bar in the Header")
 	public void admin_clicks_the_class_navigation_bar_in_the_header() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   classModuleObj.clickClassBtn();
 	}
 	@Then("Admin should land on the Manage class page")
 	public void admin_should_land_on_the_manage_class_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		String actualclassUrl = driver.getCurrentUrl();
+		Assert.assertEquals(actualclassUrl,configFileReader.getClassModulePageUrl());
+		LoggerLoad.info("You are navigated to "+ actualclassUrl);
 	}
 
 	@Then("Admin should see the {string} Title")
 	public void admin_should_see_the_title(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
 
+		 Assert.assertEquals(classModuleObj.getActualTitle(),configFileReader.getPageTitle("classPageTitle"));
+		 LoggerLoad.info("You are in "+ driver.getTitle() +" Page.");
+	}
+	
 	@Then("Admin should see the {string} Header")
 	public void admin_should_see_the_header(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		Assert.assertEquals(classModuleObj.setManageClassHeader(),configFileReader.getManageHeader("manageHeader"));
+		LoggerLoad.info("Admin should see the \"Manage Class\" Header: "+ classModuleObj.setManageClassHeader());
 	}
 
 	@Then("Admin should see the Searchbar in Manage class page")
 	public void admin_should_see_the_searchbar_in_manage_class_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+
+		boolean Searchbar = classModuleObj.setSearchbar();
+	    Assert.assertTrue(Searchbar);
+	    LoggerLoad.info("Searchbar in manage class page is visible : "+ Searchbar);
 	}
 
 	@Then("Admin should see the datatable heading like Batchname,class topic,class descrption,status,class Date,staff name,Edit\\/Delete")
-	public void admin_should_see_the_datatable_heading_like_batchname_class_topic_class_descrption_status_class_date_staff_name_edit_delete() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void admin_should_see_the_datatable_heading_like_batchname_class_topic_class_descrption_status_class_date_staff_name_edit_delete(String expectedHeaders) {
+		//bug	
+		 List<String> actualHeaders = classModuleObj.tableHeaderTexts(); // Retrieve the actual header texts
+		 List<String> expectedHeaderList = Arrays.asList(expectedHeaders.split(","));
+		    Assert.assertEquals(actualHeaders,expectedHeaderList);
+		    LoggerLoad.info("Datatable heading : "+ actualHeaders);
+		
 	}
-
 	@Then("Admin should see the {string} and enabled pagination controls under the data table")
 	public void admin_should_see_the_and_enabled_pagination_controls_under_the_data_table(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		
+		boolean paginationText = classModuleObj.getPaginationText();
+	    Assert.assertTrue(paginationText);
+	    LoggerLoad.info("print pagination text: "+ paginationText);
 	}
 
 	@Then("Admin should see the Sort icon of all the field in the datatable.")
 	public void admin_should_see_the_sort_icon_of_all_the_field_in_the_datatable() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		Assert.assertEquals(classModuleObj.isHeaderSortIconListVisible(), true);
+		LoggerLoad.info("Sort icon is visible on the fields : "+ classModuleObj.isHeaderSortIconListVisible());
 	}
 
 	@Then("Admin should see the Delete button under the Manage class page header.")
 	public void admin_should_see_the_delete_button_under_the_manage_class_page_header() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		Assert.assertEquals(classModuleObj.isDeleteAllBtnEnabled(), false);
+		LoggerLoad.info("Delete button visible under the manage class page : "+ classModuleObj.isDeleteAllBtnEnabled());
 	}
 
 	@Then("Admin should see Total no of classes in below of the data table.")
 	public void admin_should_see_total_no_of_classes_in_below_of_the_data_table() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	
+		String showStr = classModuleObj.totalNoOfClasses();
+		System.out.println("ShowStr=" + showStr);
+		String[] numbers = showStr.split("\\D+");
+		if (numbers.length > 1) {
+	        String classCount = numbers[1];
+	        String expectedText = "In total there are " + classCount + " classes.";
+	        System.out.println(expectedText);
+	        // Use contains with toLowerCase() for case-insensitive partial match
+	        Assert.assertTrue(showStr.toLowerCase().contains(expectedText.toLowerCase()));
+	        LoggerLoad.info("Total number of classes:" + expectedText);
+	    } else {
+	        System.out.println("Class count number not found in the display text.");
+	        LoggerLoad.error("Class count number not found in the display text.");
+	     
+	    }
 	}
 	
 //------------------------------------@AddNewClass------------------------------------------------------------------------
 		
-	@Given("Admin Is on the Manage class page after login")
+	@Given("Admin is on the Manage class page")
 	public void admin_is_on_the_manage_class_page_after_login() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		String actualclassUrl = driver.getCurrentUrl();
+		LoggerLoad.info("You are navigated to Manage class Page : "+ actualclassUrl);
 	}
 	
 	@When("Admin clicks add new class under the class menu bar")
 	public void admin_clicks_add_new_class_under_the_class_menu_bar() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    classModuleObj.clickAddNewClassBtn();
+	    
 	}
 	
 	@Then("Admin should see a popup open for class details with empty form along with <SAVE> and <CANCEL> button and Close\\(X) Icon on the top right corner of the window")
 	public void admin_should_see_a_popup_open_for_class_details_with_empty_form_along_with_save_and_cancel_button_and_close_x_icon_on_the_top_right_corner_of_the_window() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   Assert.assertTrue(classModuleObj.Dialogbox());
+	   LoggerLoad.info("DialogBox is opened");
+	   List<WebElement> formFields = classModuleObj.forminputs;
+	    for (WebElement field : formFields) {
+	    	Assert.assertTrue(field.getText().isEmpty(), "Form field is not empty.");
+	    	LoggerLoad.info("All the input form fields are Empty");
+	    }
+	    Assert.assertTrue(classModuleObj.cancelBtnDialogbox());
+	    LoggerLoad.info("DialogBox in cancel button is visible");
+	    Assert.assertTrue(classModuleObj.saveBtnDialogbox());
+	    LoggerLoad.info("DialogBox in save button is visible");
+	    Assert.assertTrue(classModuleObj.closeIconDialogbox());
+	    LoggerLoad.info("DialogBox in close icon is visible");
+	  
 	}
 	
 	@Then("Admin should see few input fields and their respective text boxes in the class details window")
 	public void admin_should_see_few_input_fields_and_their_respective_text_boxes_in_the_class_details_window() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+		 List<String> expectedFieldLabels = Arrays.asList("Class Topic", "Class Description", "No of Classes", "Comments", "Notes", "Recording");
+
+		    List<WebElement> formFieldsText = classModuleObj.formTextInputs;
+		    for (WebElement fieldText : formFieldsText) {
+		        String fieldTextContent = fieldText.getText().trim();
+
+		        LoggerLoad.info("Form field text found: [" + fieldTextContent + "]");
+
+		        if (fieldTextContent.isEmpty()) {
+		            LoggerLoad.warn("Warning: An empty field label was found. Check the locator or HTML structure.");
+		            continue;
+		        }
+
+		        Assert.assertTrue(expectedFieldLabels.contains(fieldTextContent),
+		                "Unexpected field found: " + fieldTextContent + " is not in the expected labels list.");
+		    }
+		    LoggerLoad.info("All expected form fields and their text boxes are displayed correctly in the class details window.");
+		}
 //--------------------------------------@AddNewClasspopup----------------------------------------
 
 	@Given("Admin is on the Class Popup window")
@@ -213,26 +263,27 @@ public class ClassModule {
 //------------------------------------------@EditNewclass-------------------------------
 	@When("Admin clicks on the edit icon")
 	public void admin_clicks_on_the_edit_icon() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    classModuleObj.clickEditButton();
 	}
 
 	@Then("A new pop up with class details appears")
 	public void a_new_pop_up_with_class_details_appears() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		boolean headingClassDetails=classModuleObj.classDetailsAppear();
+		Assert.assertEquals(headingClassDetails,true);
+		LoggerLoad.info("new pop up with class details appear");
 	}
 
 	@Then("Admin should see batch name field is disabled")
 	public void admin_should_see_batch_name_field_is_disabled() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		boolean isDisabled = classModuleObj.disableBatchName();
+	//	Assert.assertTrue(classModuleObj.disableBatchName(), "Batch name field is not disabled.");
+	    Assert.assertTrue(isDisabled, "Batch name dropdown is not disabled.");
 	}
 
 	@Then("Admin should see class topic field is disabled")
 	public void admin_should_see_class_topic_field_is_disabled() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		Assert.assertTrue(classModuleObj.disableClassTopic(), "class Topic field is not disabled.");
+	    LoggerLoad.info("Admin should see class Topic field is disabled");
 	}
 
 }
