@@ -9,7 +9,7 @@ import java.util.Properties;
 public class ConfigFileReader {
 	private Properties properties;
 
-	private final String propertyFilePath = "src//test//resources//config//Configuration.properties";
+	private final String propertyFilePath = "src/test/resources/config/Configuration.properties";
 
 	public ConfigFileReader() {
 		BufferedReader reader;
@@ -51,8 +51,10 @@ public class ConfigFileReader {
 	public String getUser() {                 //added by shruti
 		String username = properties.getProperty("username").trim();
 
+
 		if (username != null)
 		{
+
 			return username;
 		} else {
 			throw new RuntimeException("username  not specified in the Configuration.properties file.");
@@ -65,6 +67,7 @@ public class ConfigFileReader {
 
 		if (password != null)
 		{
+
 			return password;
 		} else {
 			throw new RuntimeException("password not specified in the Configuration.properties file.");
