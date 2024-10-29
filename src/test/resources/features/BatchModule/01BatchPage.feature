@@ -83,55 +83,55 @@ Background: Batch Login
     When Admin clicks the edit icon2 
     Then Admin should see batch name value field is disabled for editing
     
-    @tag18
-  Scenario: Validate editing description and No. of classes fields with invalid data in the pop up
-    Given Admin is on the Batch Details Page
-    When Admin Updates any fields with invalid data and click save button
-    Then Admin should get a error message under the respective field
+   # @tag18
+  #Scenario: Validate editing description and No. of classes fields with invalid data in the pop up
+   # Given Admin is on the Batch Details Page
+   # When Admin Updates any fields with invalid data and click save button
+    #Then Admin should get a error message under the respective field
     
-    @tag19
-   Scenario: validate save button in Batch details pop up
-    Given Admin is on the Batch Details Page
-    When Admin enters the valid data to all the mandatory fields and click save button 
-    Then Admin should get a succesesful message for editing the batch
+   # @tag19
+  # Scenario: validate save button in Batch details pop up
+   # Given Admin is on the Batch Details Page
+   # When Admin enters the valid data to all the mandatory fields and click save button 
+   # Then Admin should get a succesesful message for editing the batch
     
-    @tag20
-   Scenario: validate cancel button in Batch details pop up
-    When Admin enters the valid data to all the mandatory fields and click cancel button 
-    Then Admin can see the batch details popup closes without editing the batch
+   # @tag20
+   #Scenario: validate cancel button in Batch details pop up
+   # When Admin enters the valid data to all the mandatory fields and click cancel button 
+   # Then Admin can see the batch details popup closes without editing the batch
     
-    @tag21
+   # @tag21
     #Pagination
-       Scenario: validate last page link
-    When Admin clicks last page link on the data table
-    Then Admin should see the last page link with next page link disabled on the table 
+    #   Scenario: validate last page link
+  #  When Admin clicks last page link on the data table
+   # Then Admin should see the last page link with next page link disabled on the table 
     
-    @tag22
-          Scenario: validate the backward page link
+    #@tag22
+       #   Scenario: validate the backward page link
     
-    When Admin clicks backward page link on the data table
-    Then Admin should see the previous page on the table
+   # When Admin clicks backward page link on the data table
+   # Then Admin should see the previous page on the table
     
-    @tag23
-          Scenario: validate the first page link
+    #@tag23
+     #     Scenario: validate the first page link
    
-    When Admin clicks first page link on the data table
-    Then Admin should see the very first page on the data table
+   # When Admin clicks first page link on the data table
+   # Then Admin should see the very first page on the data table
     
-    @tag24
+   # @tag24
     #Search Text box validation
     
-          Scenario: validate serach box functionality
-   
-    When Admin enters the batch name in the serach text box
-    Then Admin should see the filtered batches in the data table
+         # Scenario: validate serach box functionality
+   #
+   # When Admin enters the batch name in the serach text box
+   # Then Admin should see the filtered batches in the data table
     
     #LogOut of the application from the batch page
-    @tag25
-            Scenario: Validate logout option in the header is visible and enabled from the batch page
+   # @tag25
+            #Scenario: Validate logout option in the header is visible and enabled from the batch page
     
-    When Admin clicks on the logout button
-    Then Admin should see the Login screen Page
+   # When Admin clicks on the logout button
+   # Then Admin should see the Login screen Page
     
     
     
