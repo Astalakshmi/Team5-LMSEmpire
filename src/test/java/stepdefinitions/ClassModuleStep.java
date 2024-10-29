@@ -35,7 +35,7 @@ public class ClassModuleStep {
 		LoggerLoad.info("You are navigated to "+ actualclassUrl);
 	}
 
-	@Then("Admin should see the {string} Title")
+	@Then("Admin should see the {string} Title in class Page")
 	public void admin_should_see_the_title(String string) {
 
 		 Assert.assertEquals(classModuleObj.getActualTitle(),configFileReader.getPageTitle("classPageTitle"));

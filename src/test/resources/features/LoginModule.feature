@@ -23,47 +23,47 @@ Feature: Login  Page Verification
 	Scenario: Verify the company logo
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should see logo on the left  side
+			Then Admin should see logo on the left  side
 	
 	Scenario: Verify application name
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should see  LMS - Learning Management System
+			Then Admin should see  LMS - Learning Management System
 	
 	Scenario: Verify company name
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should see company name below the app name
+			Then Admin should see company name below the app name
 	
 	Scenario: Validate sign in content
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should see "Please login to LMS application"
+			Then Admin should see "Please login to LMS application"
 	
 	Scenario: Verify text field is present
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should see two text field
+			Then Admin should see two text field
 	
 	Scenario: Verify text on the first text field
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should "User" in the first text field
+			Then Admin should "User" in the first text field
 	
 	Scenario: Verify asterik next to Admin text
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should see field mandatory (*) symbol next to Admin text
+			Then Admin should see field mandatory (*) symbol next to Admin text
 	
 	Scenario: Verify text on the second text field
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should "Password" in the second text field
+			Then Admin should "Password" in the second text field
 	
 	Scenario: Verify asterik next to password text
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should see * symbol next to password text
+			Then Admin should see * symbol next to password text
 	
 	Scenario: Verify the alignment input field for the login
 		Given Admin launch the browser

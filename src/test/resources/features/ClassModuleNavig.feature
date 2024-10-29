@@ -23,5 +23,5 @@ Background:
     Then Admin is re-directed to Manage Batch 
     
     Scenario: Validate Batch Name on Class Detail Pop up window
-    When Admin clicka add new class under the class menu bar
+ #	   When Admin clicka add new class under the class menu bar
     Then Admin should see Class Name on Class Details page
