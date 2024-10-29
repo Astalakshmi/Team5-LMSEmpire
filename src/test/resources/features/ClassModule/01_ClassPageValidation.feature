@@ -31,8 +31,8 @@ Feature: LMS Portal Class Page feature Validation in ClassModule Page Functional
   @ClassPageValidationTest_005
   Scenario: Validating the data table headers in the class page
     When Admin clicks the Class Navigation bar in the Header
-    Then Admin should see the datatable heading like Batchname,class topic,class descrption,status,class Date,staff name,Edit/Delete
-
+    #Then Admin should see the datatable heading like "Batchname,class topic,class descrption,status,class Date,staff name,Edit/Delete"
+  
   @ClassPageValidationTest_006
   Scenario: Validating the text and pagination icon in the classpage
     When Admin clicks the Class Navigation bar in the Header

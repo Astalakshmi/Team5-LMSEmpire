@@ -1,3 +1,4 @@
+@logout
 Feature: Validation on Logout button
 
 	@SkipHooks

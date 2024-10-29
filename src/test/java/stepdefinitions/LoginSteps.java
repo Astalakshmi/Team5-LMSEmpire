@@ -8,14 +8,14 @@ import org.junit.Assert;
 
 public class LoginSteps {
 
-    LoginPage loginPage;
+//   LoginPage loginPage;
+   LoginPage  loginPage = new LoginPage();
+//    @Given("Admin launch the browser")
+//    public void admin_launch_the_browser() {
+//    	loginPage = new LoginPage();
+//    }
 
-    @Given("Admin launch the browser")
-    public void admin_launch_the_browser() {
-    	loginPage = new LoginPage();
-    }
-
-    @When("Admin gives the correct LMS portal URL")
+    @When("Admin gives the correct LMS portal URL login")
     public void admin_gives_correct_url() {
         loginPage.enterURL(loginPage.validPortal);
     }
@@ -46,7 +46,7 @@ public class LoginSteps {
     }
     
 
-    @Then("Admin should see logo on the left  side")
+    @Then("Admin should see logo on the leftside")
     public void admin_should_see_logo_on_the_left_side() {
         Assert.assertTrue(loginPage.isLogoAlignedLeft());
     }
