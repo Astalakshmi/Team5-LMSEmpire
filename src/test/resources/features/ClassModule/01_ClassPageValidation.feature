@@ -16,7 +16,7 @@ Feature: LMS Portal Class Page feature Validation in ClassModule Page Functional
   @ClassPageValidationTest_002
   Scenario: Validating the Title in the Manage class page
     When Admin clicks the Class Navigation bar in the Header
-    Then Admin should see the "LMS-Learning Management System" Title
+    Then Admin should see in the "LMS-Learning Management System" Title
 
   @ClassPageValidationTest_003
   Scenario: Validating the Header in the Manage class page
