@@ -16,7 +16,6 @@ public class ProgramModule {
 	WebDriver driver;
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-
 	@FindBy(xpath = "//button[@class='p-button-danger p-button p-component p-button-icon-only']")
 	private WebElement deleteAll;
 	@FindBy(xpath = "//input[@id='filterGlobal']")
@@ -58,13 +57,11 @@ public class ProgramModule {
 	private WebElement paginationText;
 
 	@FindBy(xpath = "//div[@class='p-d-flex p-ai-center p-jc-between ng-star-inserted']")
-	private WebElement totalProgramText;  
-
-
+	private WebElement totalProgramText;
 
 	public ProgramModule() {
 		driver = WebdriverManager.getDriver();
- 		PageFactory.initElements( driver, this);
+		PageFactory.initElements(driver, this);
 	}
 
 	public void programBtn() {
@@ -74,13 +71,16 @@ public class ProgramModule {
 	public boolean isManagePorgramDisplayed() {
 		return managePgm.isDisplayed();
 	}
+
 	public String managePorgramText() {
 		return managePgm.getText();
 	}
+
 	public String lmsHeading() {
 		return lmsHeading.getText();
 
 	}
+
 	public String moduleNames() {
 		String modules = "";
 		for (WebElement moduleName : moduleNames) {
@@ -92,65 +92,72 @@ public class ProgramModule {
 	public boolean isLogoutBtnDisplayed() {
 		return logoutBtn.isDisplayed();
 	}
+
 	public String addNewProgram() {
 
 		WebElement subMenuItem = wait.until(ExpectedConditions.elementToBeClickable(addNewProgram));
 		return subMenuItem.getText();
 	}
+
 	public void addNewProgramClick() {
 
 		WebElement subMenuItem = wait.until(ExpectedConditions.elementToBeClickable(addNewProgram));
-		//subMenuItem.click();
-		 subMenuItem.click();
+		// subMenuItem.click();
+		subMenuItem.click();
 	}
+
 	public boolean isDeleteAllBtnEnabled() {
 
 		return deleteAll.isEnabled();
 	}
+
 	public String searchBoxPlaceHolder() {
 		return searchBox.getAttribute("placeholder");
 	}
 
 	public String dataTableHeaders() {
 		String headers = "";
-		for(int i=1;i<dataTableHeaders.size();i++) {
+		for (int i = 1; i < dataTableHeaders.size(); i++) {
 
 			headers = headers + dataTableHeaders.get(i).getText() + ", ";
 		}
-		return headers.trim().substring(0, headers.length()-2); // to remove the last 2 character ", "
+		return headers.trim().substring(0, headers.length() - 2); // to remove the last 2 character ", "
 	}
 
 	public boolean isChkBxHeaderSelected() {
 		return chkBoxHeader.isSelected();
 	}
-	
+
 	public boolean isChkBoxListSelected() {
 		boolean state = false;
-		for(WebElement box: chkBoxList ) {
+		for (WebElement box : chkBoxList) {
 			state = box.isSelected();
-			if (state)
-			 {
-				break;  // check if any of the check boxes are selected
+			if (state) {
+				break; // check if any of the check boxes are selected
 			}
 		}
 		return state;
 	}
+
+	public List<WebElement> getSortIcons() {
+		return headerSortIconList;
+	}
+
 	public boolean isHeaderSortIconListVisible() {
 		boolean state = true;
-		for(WebElement sortIcon: headerSortIconList ) {
+		for (WebElement sortIcon : headerSortIconList) {
 			state = sortIcon.isDisplayed();
-			if (!state)
-			 {
-				break;  // check if any of the check boxes are selected
+			if (!state) {
+				break; // check if any of the sort icon is not displayedS
 			}
 		}
 		return state;
 	}
 
 	public boolean isEditAndDeleteListVisible() {
-		for(int i=0;(i<editBtnList.size() && i<deleteBtnList.size());i++ ) {
-			if(!editBtnList.get(i).isDisplayed() || !deleteBtnList.get(i).isDisplayed()) {
-				//returns false if either edit or delete button id not displayed
+		for (int i = 0; (i < editBtnList.size() && i < deleteBtnList.size()); i++) {
+			if (!editBtnList.get(i).isDisplayed() || !deleteBtnList.get(i).isDisplayed()) {
+				// returns false if either edit or delete button id not displayed
 				return false;
 			}
 		}
@@ -161,6 +168,7 @@ public class ProgramModule {
 		WebElement subMenuItem = wait.until(ExpectedConditions.elementToBeClickable(paginationText));
 		return subMenuItem.getText();
 	}
+
 	public String getTotalProgramsText() {
 		WebElement subMenuItem = wait.until(ExpectedConditions.elementToBeClickable(totalProgramText));
 
@@ -173,8 +181,8 @@ public class ProgramModule {
 		int totalPrograms = Integer.parseInt(arr[4]);
 		return totalPrograms;
 	}
-	
-	public List<WebElement>getEditbuttonList(){
+
+	public List<WebElement> getEditbuttonList() {
 		return editBtnList;
 	}
 
