@@ -34,7 +34,6 @@ Feature: Manage Program Page
   Scenario: Verify subheading in manage program
     Then Admin should see the subheading "Manage Program"
 
-  # still to do
   @tag8
   Scenario: Verify view details of programs
     Then Admin should able to see Program name, description, and status for each program

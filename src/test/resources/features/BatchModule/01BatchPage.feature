@@ -85,6 +85,7 @@ Background: Batch Login
     
    # @tag18
   #Scenario: Validate editing description and No. of classes fields with invalid data in the pop up
+<<<<<<< HEAD
    # Given Admin is on the Batch Details Page
    # When Admin Updates any fields with invalid data and click save button
     #Then Admin should get a error message under the respective field
@@ -97,22 +98,48 @@ Background: Batch Login
     
    # @tag20
    #Scenario: validate cancel button in Batch details pop up
+=======
+    #Given Admin is on the Batch Details Page
+    #When Admin Updates any fields with invalid data and click save button
+    #Then Admin should get a error message under the respective field
+    
+   # @tag19
+   #Scenario: validate save button in Batch details pop up
+   # Given Admin is on the Batch Details Page
+    #When Admin enters the valid data to all the mandatory fields and click save button 
+    #Then Admin should get a succesesful message for editing the batch
+    
+   # @tag20
+  # Scenario: validate cancel button in Batch details pop up
+>>>>>>> master
    # When Admin enters the valid data to all the mandatory fields and click cancel button 
    # Then Admin can see the batch details popup closes without editing the batch
     
    # @tag21
     #Pagination
     #   Scenario: validate last page link
+<<<<<<< HEAD
   #  When Admin clicks last page link on the data table
    # Then Admin should see the last page link with next page link disabled on the table 
     
     #@tag22
        #   Scenario: validate the backward page link
+=======
+   # When Admin clicks last page link on the data table
+   # Then Admin should see the last page link with next page link disabled on the table 
+    
+   # @tag22
+          #Scenario: validate the backward page link
+>>>>>>> master
     
    # When Admin clicks backward page link on the data table
    # Then Admin should see the previous page on the table
     
+<<<<<<< HEAD
     #@tag23
+=======
+   # @tag23
+>>>>>>> master
      #     Scenario: validate the first page link
    
    # When Admin clicks first page link on the data table
@@ -121,15 +148,24 @@ Background: Batch Login
    # @tag24
     #Search Text box validation
     
+<<<<<<< HEAD
          # Scenario: validate serach box functionality
    #
+=======
+    #      Scenario: validate serach box functionality
+   
+>>>>>>> master
    # When Admin enters the batch name in the serach text box
    # Then Admin should see the filtered batches in the data table
     
     #LogOut of the application from the batch page
    # @tag25
             #Scenario: Validate logout option in the header is visible and enabled from the batch page
+<<<<<<< HEAD
     
+=======
+   # 
+>>>>>>> master
    # When Admin clicks on the logout button
    # Then Admin should see the Login screen Page
     
