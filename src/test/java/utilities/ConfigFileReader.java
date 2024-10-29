@@ -82,6 +82,7 @@ public class ConfigFileReader {
 			throw new RuntimeException("browser not specified in the Configuration.properties file.");
 		}
 	}
+	
 
 	public String getPageTitle(String pageName) {
 		String title = properties.getProperty(pageName);
