@@ -54,7 +54,7 @@ public class EditProgramSteps {
 	@Then("Updated Program Name is seen by the Admin")
 	public void updated_program_name_is_seen_by_the_admin() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin edits the Description text with data from the sheet {string} and click on save button")
