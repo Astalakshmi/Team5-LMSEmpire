@@ -110,7 +110,8 @@
     <version>1.27.1</version>
 </dependency>
 
-  </dependencies>
+
+   </dependencies>
   
    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
 <build>
