@@ -1,4 +1,4 @@
-@tag
+@manageProgram
 Feature: Manage Program Page
 
   Background: 

@@ -6,6 +6,7 @@
  #When Admin enter valid credentials and clicks login button 
  #Then Admin should land on dashboard page and click on Batch module
  
+
  #Scenario: Validate all the fields exist in pop up 
 # Given Admin is on the Batch Details Pop Up WIndow
 # When Admin checks all the fields are enabled
@@ -14,12 +15,14 @@
 
  
  
+
  
 # Scenario: Validate batchname prefix selected program name
 #  Given Admin is on the Batch Details Pop Up WIndow
 # When Admin selects program name present in the dropdown
 #  Then Admin should see selected program name in the batch name prefix box
   
+
  
  
  #Scenario:  Validate batch name suffix box should accept only numbers
@@ -32,7 +35,7 @@
  # Given Admin is on the Batch Details Pop Up WIndow
 # When Admin enters alphabets in batch name prefix box
 #  Then Admin should see empty text box
-  
+
  
 # Scenario: Validate input data only for mandatory fields
 #  Given Admin is on the Batch Details Pop Up WIndow
@@ -48,26 +51,15 @@
  
 # Scenario: validate save button in Batch details pop up
  
-# Given Admin is on the Batch Details Pop Up WIndow
-# When  Admin enters the valid data to all the mandatory fields and click save button 
- #  Then Admin should get a succesesful message
-   
+
  
 # Scenario: validate cancel button in Batch details pop up
  
-# Given Admin is on the Batch Details Pop Up WIndow
-# When Admin enters the valid data to all the mandatory fields and click cancel button 
- 
-# Then Admin can see the batch details popup closes without creating any batch
+
  
  
  # Scenario: validate close icon on the batch details pop up
-  
- #Given Admin is on the Batch Details Pop Up WIndow
-# When Admin clicks on the close icon
- 
-# Then batch details pop up closes
- 
+
 
  
  

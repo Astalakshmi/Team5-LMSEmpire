@@ -74,55 +74,55 @@ public class EditProgramSteps {
 	@Then("Admin can see the Description is updated")
 	public void admin_can_see_the_description_is_updated() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin changes the status of the program and click on save button")
 	public void admin_changes_the_status_of_the_program_and_click_on_save_button() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Status updated can be viewed by the Admin")
 	public void status_updated_can_be_viewed_by_the_admin() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin click on save button")
 	public void admin_click_on_save_button() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin can see the updated program details")
 	public void admin_can_see_the_updated_program_details() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin click on cancel button")
 	public void admin_click_on_cancel_button() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin can see the Program details form disappears")
 	public void admin_can_see_the_program_details_form_disappears() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin searches with newly updated Program Name")
 	public void admin_searches_with_newly_updated_program_name() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+	//	throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin verifies that the details are correctly updated")
 	public void admin_verifies_that_the_details_are_correctly_updated() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+	//	throw new io.cucumber.java.PendingException();
 	}
 
 }

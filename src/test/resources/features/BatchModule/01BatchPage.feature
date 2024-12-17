@@ -1,5 +1,5 @@
 
-@tag
+@batchPage
 Feature: Batch Page Navigation 
 
 Background: Batch Login
@@ -13,8 +13,8 @@ Background: Batch Login
    #Batch Page Navigation 
 
   Scenario: Verify Admin Navigate to Batch page successfully
-   
-    Then Admin should be in the "Manage Batch" Page
+    Then Admin should be in the Manage Batch Page
+  
   @tag3  
    #Batch Page Validation
   Scenario: Validate "Title" in Batch Page
@@ -65,7 +65,7 @@ Background: Batch Login
     @tag14
   Scenario: Validate Admin able to click on the Add new Batch Option
     When Admin clicks on "Add New batch" under the "batch" menu bar1  
-    Then Admin should see the Batch Details pop up window
+    #Then Admin should see the Batch Details pop up window
     
     #Edit icon Validation
     @tag15

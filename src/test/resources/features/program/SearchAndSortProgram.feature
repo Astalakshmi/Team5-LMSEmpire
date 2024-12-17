@@ -1,4 +1,4 @@
-@tag
+@sortProgram
 Feature: Search and sort Program
 
   Background: 

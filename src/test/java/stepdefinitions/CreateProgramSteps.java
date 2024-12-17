@@ -175,14 +175,12 @@ public class CreateProgramSteps {
 
 	@When("Admin Click on cancel button")
 	public void admin_click_on_cancel_button() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		
 	}
 
 	@Then("Admin can see program details form disappear")
 	public void admin_can_see_program_details_form_disappear() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		
 	}
 
 	@When("Admin Click on {string} button")

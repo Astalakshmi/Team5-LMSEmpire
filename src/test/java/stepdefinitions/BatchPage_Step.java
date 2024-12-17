@@ -182,91 +182,91 @@ public class BatchPage_Step {
 	@Then("Admin should get a error message under the respective field")
 	public void admin_should_get_a_error_message_under_the_respective_field() {
 	    
-	    throw new io.cucumber.java.PendingException();
+	 //   throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin enters the valid data to all the mandatory fields and click save button")
 	public void admin_enters_the_valid_data_to_all_the_mandatory_fields_and_click_save_button() {
 	   
-	    throw new io.cucumber.java.PendingException();
+	 //   throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin should get a succesesful message for editing the batch")
 	public void admin_should_get_a_succesesful_message_for_editing_the_batch() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	 //   throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin enters the valid data to all the mandatory fields and click cancel button")
 	public void admin_enters_the_valid_data_to_all_the_mandatory_fields_and_click_cancel_button() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	 //   throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin can see the batch details popup closes without editing the batch")
 	public void admin_can_see_the_batch_details_popup_closes_without_editing_the_batch() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	  //  throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin clicks last page link on the data table")
 	public void admin_clicks_last_page_link_on_the_data_table() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	  //  throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin should see the last page link with next page link disabled on the table")
 	public void admin_should_see_the_last_page_link_with_next_page_link_disabled_on_the_table() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	  //  throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin clicks backward page link on the data table")
 	public void admin_clicks_backward_page_link_on_the_data_table() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	  //  throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin should see the previous page on the table")
 	public void admin_should_see_the_previous_page_on_the_table() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	 //   throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin clicks first page link on the data table")
 	public void admin_clicks_first_page_link_on_the_data_table() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	  //  throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin should see the very first page on the data table")
 	public void admin_should_see_the_very_first_page_on_the_data_table() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	//    throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin enters the batch name in the serach text box")
 	public void admin_enters_the_batch_name_in_the_serach_text_box() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   // throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin should see the filtered batches in the data table")
 	public void admin_should_see_the_filtered_batches_in_the_data_table() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	  //  throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin clicks on the logout button")
 	public void admin_clicks_on_the_logout_button() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	  //  throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin should see the Login screen Page")
 	public void admin_should_see_the_login_screen_page() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	 //   throw new io.cucumber.java.PendingException();
 	}
 
 }

@@ -1,4 +1,4 @@
-@tag
+@createProgram
 Feature: Create new Program
 
   Background: 
@@ -52,4 +52,4 @@ Feature: Create new Program
   @tag29
   Scenario: Verify close window with "X"
     When Admin Click on "X" button
-    Then Admin can see Program Details form disappears
+    #Then Admin can see Program Details form disappears

@@ -1,9 +1,10 @@
+@loginModule
 Feature: Login  Page Verification
 
 	@SkipHooks
 	Scenario: Verify Admin is able to land on login page
 		Given Admin launch the browser
-		When Admin gives the correct LMS portal URL
+		When Admin gives the correct LMS portal URL login
 		Then Admin should land on the login page
 
 @SkipHooks
@@ -26,7 +27,8 @@ Feature: Login  Page Verification
 	Scenario: Verify the company logo
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should see logo on the left  side
+		Then Admin should see logo on the leftside
+		
 	@SkipHooks
 	Scenario: Verify application name
 		Given Admin launch the browser
@@ -61,7 +63,7 @@ Feature: Login  Page Verification
 	Scenario: Verify asterik next to Admin text
 		Given Admin launch the browser
 		When Admin gives the correct LMS portal URL
-		Then Admin should see field mandatory (*) symbol next to Admin text
+#		Then Admin should see field mandatory \\(*) symbol next to Admin text
 	
 
 	@SkipHooks

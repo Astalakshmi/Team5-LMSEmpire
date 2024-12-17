@@ -56,7 +56,7 @@ public class ClassModuleStep {
 	    LoggerLoad.info("Searchbar in manage class page is visible : "+ Searchbar);
 	}
 
-	@Then("Admin should see the datatable heading like Batchname,class topic,class descrption,status,class Date,staff name,Edit\\/Delete")
+	@Then("Admin should see the datatable heading like {string}")
 	public void admin_should_see_the_datatable_heading_like_batchname_class_topic_class_descrption_status_class_date_staff_name_edit_delete(String expectedHeaders) {
 		//bug	
 		 List<String> actualHeaders = classModuleObj.tableHeaderTexts(); // Retrieve the actual header texts

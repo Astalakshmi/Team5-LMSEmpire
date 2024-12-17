@@ -14,9 +14,8 @@ import utilities.ConfigFileReader;
     glue = {"stepdefinitions","hooks"},
     monochrome = true,
 
- //  tags= "@ClassPageValidation or @AddNewClass or @EditNewclass",
- //  tags="@EditNewclass",
-    tags="",
+   tags= "@Login or @ClassPageValidation or @AddNewClass or @EditNewclass or @createProgram or @editProgram or @manageProgram or @sortProgram or @batchPage or @loginModule or @logout", 
+    		
     plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
     		"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
     		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",

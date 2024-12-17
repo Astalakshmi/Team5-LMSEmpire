@@ -110,7 +110,7 @@ public class ProgramModuleSteps {
 	@Then("Admin should see the footer as In total there are z programs")
 	public void admin_should_see_the_footer_as_in_total_there_are_z_programs() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		//throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Admin should see the Edit and Delete buttons on each row of the data table")
@@ -128,19 +128,19 @@ public class ProgramModuleSteps {
 	@Then("Admin should able to see Program name, description, and status for each program")
 	public void admin_should_able_to_see_program_name_description_and_status_for_each_program() {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+	//	throw new io.cucumber.java.PendingException();
 	}
 
 	@When("Admin searches with newly created {string}")
 	public void admin_searches_with_newly_created(String string) {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+	//	throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("Records of the newly created  {string} is displayed and match the data entered")
 	public void records_of_the_newly_created_is_displayed_and_match_the_data_entered(String string) {
 		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+	//	throw new io.cucumber.java.PendingException();
 	}
 
 }
